@@ -44,3 +44,17 @@ def insert_into_excel():
 
 insert_into_excel()
 
+
+def replace_table_data():
+
+    csv_file_path = r"C:\\Users\\Sober\\Downloads\\tesla_stock_data_2000_2025.csv"
+
+    df = pd.read_csv(csv_file_path)
+    try:
+        df.to_sql("Home", con=engine, if_exists="replace", index=False )
+        print("Tabel data has been replaced")
+    except Exception as e:
+        print(f"An error as occured...{e}")
+    
+
+
