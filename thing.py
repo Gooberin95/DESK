@@ -21,3 +21,26 @@ except Exception as e:
     print(f"An error has occured...{e}")
 
 
+def select_all():
+    try:
+        query = "SELECT * FROM Homes"
+        df = pd.read_sql(query, engine)
+        print(df)
+    except Exception as e:
+        print(f"An error has occurred {e}")
+
+select_all()
+
+
+def insert_into_excel():
+    try: 
+        query = "SELECT * FROM Homes"
+        df = pd.read_sql(query, engine)
+        df.to_excel("Testing.xlsx", index=False)
+        print("The table data has been saved into an Excel file")
+    except Exception as e:
+        print(f"An error has occurred... {e}")
+
+
+insert_into_excel()
+
