@@ -51,10 +51,9 @@ def replace_table_data():
 
     df = pd.read_csv(csv_file_path)
     try:
-        df.to_sql("Home", con=engine, if_exists="replace", index=False )
+        df.to_sql("Homes", con=engine, if_exists="replace", index=False )
         print("Tabel data has been replaced")
     except Exception as e:
         print(f"An error as occured...{e}")
     
-
 
